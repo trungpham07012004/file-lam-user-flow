@@ -1,0 +1,12 @@
+{
+  "name": "electrocare-frontend",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node phuc-vu-giao-dien.mjs",
+    "start": "node phuc-vu-giao-dien.mjs",
+    "build": "node tao-ban-xay-dung.mjs",
+    "preview": "node phuc-vu-giao-dien.mjs"
+  }
+}

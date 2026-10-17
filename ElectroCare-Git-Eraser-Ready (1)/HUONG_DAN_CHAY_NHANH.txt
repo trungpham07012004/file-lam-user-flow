@@ -1,0 +1,25 @@
+ELECTROCARE - HUONG DAN CAI DAT VA CHAY
+
+A. CAI DAT LAN DAU
+1. Cai Node.js LTS (khuyen nghi Node.js 20 tro len) va XAMPP.
+2. Giai nen ZIP vao mot thu muc de tim, vi du C:\ElectroCare. Cac file BAT nam ngay trong thu muc ElectroCare, khong can mo them lop thu muc con.
+3. Mo XAMPP Control Panel va bat MySQL. Bat Apache neu ban muon vao phpMyAdmin qua http://localhost/phpmyadmin.
+4. Mo may-chu\.env bang Notepad de kiem tra DB_HOST, DB_USER, DB_PASSWORD, DB_NAME. Mac dinh XAMPP: DB_USER=root, DB_PASSWORD de trong, DB_NAME=electrocare_v2.
+5. Neu database electrocare_v2 da ton tai va dang chua bang users cu, hay EXPORT/sao luu database truoc. Sau do chon database electrocare_v2 trong phpMyAdmin > Import > chon co-so-du-lieu\tao-co-so-du-lieu.sql. File dung CREATE TABLE IF NOT EXISTS de tao cac bang con thieu va giu bang users da ton tai; khong xoa database.
+6. Chay CAI_DAT_ELECTROCARE.bat va cho cai thu vien hoan tat.
+7. Neu muon dung Gemini AI, dan API key that vao dong GEMINI_API_KEY= trong may-chu\.env. Khong gui file .env cho nguoi khac va khong dua len GitHub.
+8. Chay CHAY_ELECTROCARE.bat. Giu mo hai cua so Backend va Frontend.
+9. Mo giao dien: http://localhost:5173
+10. Kiem tra backend va database: http://localhost:3000/api/health. Can thay {"ok":true,"database":true}.
+
+B. TAI KHOAN CU
+- File users.sql ban gui co bang users voi 9 tai khoan va dung schema tuong thich voi bang users trong du an.
+- Neu cac tai khoan do da nam trong database electrocare_v2, KHONG import users.sql lan nua. Chi sao luu database roi import tao-co-so-du-lieu.sql de tao them cac bang con thieu.
+- Neu tai khoan cu chua co trong database dang dung, sao luu database truoc roi dung file co-so-du-lieu\nhap-tai-khoan-cu.sql theo huong dan trong phpMyAdmin.
+- Chi co bang users thi khong the phuc hoi lich hen, lich su sua chua hay du lieu linh kien cu.
+
+C. NEU CHAY LOI
+- Neu /api/health bao database=false: kiem tra MySQL da bat chua, ten database, user va password trong may-chu\.env; xem loi o cua so Backend.
+- Neu port 3000 hoac 5173 dang duoc dung: dong cac cua so server ElectroCare cu truoc khi chay lai.
+- Neu Gemini khong phan hoi: kiem tra GEMINI_API_KEY, ten model va quota Google AI Studio. API key trong .env dang de trong cho den khi ban tu dien.
+- Khong gui cong khai may-chu\.env vi co the chua API key va mat khau database.
